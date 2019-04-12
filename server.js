@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const users = require('./routes/api/users');
+const plaid = require('./routes/api/plaid');
 const app = express();
 const path = require('path');
 //bodyparse middleware
@@ -27,7 +28,8 @@ app.use(passport.initialize());
 //passport configs
 require('./config/passport')(passport);
 //routes
-app.use('/api/users', users)
+app.use('/api/users', users);
+app.use('/api/plaid', plaid);
 //server static assets if in production 
 if (process.env.NODE_ENV === 'production') {
    //set a static folder
