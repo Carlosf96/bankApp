@@ -1,6 +1,6 @@
-# Minimum Viable Product Demo APP
+# A fullstack banking APP
 
-A basic log in and authentication web app.
+A basic banking app that consumes the Plaid api.
 
 ## Installation
 
