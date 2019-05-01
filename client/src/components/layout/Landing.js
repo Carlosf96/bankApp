@@ -15,8 +15,7 @@ class Landing extends Component {
               create a (minimal) full-stack app with user auth via passportJS and JWT
             </p>
             <br/>
-            <Link to='/register'>
-            <a 
+            <Link to='/register'
               style={{
                 
                 width: '150px',
@@ -25,9 +24,8 @@ class Landing extends Component {
               }}
               className='btn btn-large waves-effect waves-light hoverable blue accent-3'>
               Register
-            </a></Link>
-            <Link to='/login'>
-              <a 
+            </Link>
+            <Link to='/login'
               style={{
                 
                 width: '150px',
@@ -36,7 +34,6 @@ class Landing extends Component {
               }}
               className='btn btn-large waves-effect waves-light hoverable blue accent-3'>
               Login
-              </a>
             </Link>
           </div>
         </div>

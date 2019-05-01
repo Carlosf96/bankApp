@@ -1,5 +1,5 @@
 {
-  "name": "MVP",
+  "name": "bankaroni",
   "version": "1.0.0",
   "description": "A simple MVP auth login app",
   "main": "server.js",
@@ -34,7 +34,7 @@
     "ws": "3.3.2"
   },
   "scripts": {
-    "client-insall": "npm install --prefix client",
+    "client-install": "npm install --prefix client",
     "start": "node server.js",
     "server": "nodemon",
     "client": "npm start --prefix client",
