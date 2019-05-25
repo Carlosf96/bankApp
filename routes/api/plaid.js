@@ -22,9 +22,9 @@ const client = new plaid.Client(
   { version: "2018-05-22" }
 );
 
-var PUBLIC_TOKEN = null;
-var ACCESS_TOKEN = null;
-var ITEM_ID = null;
+var PUBLIC_TOKEN = "5cafd9ecf9c7ee0012d5ab00";
+var ACCESS_TOKEN = "f4785648c2e65f2634af3bd8a4475b";
+var ITEM_ID = "0e6537859842b48227512f9d472960";
 
 //routes will go here
 
@@ -59,7 +59,7 @@ router.post(
               if (account) {
                 console.log("Account already exists");
               } else {
-                const newAccount = new Account({
+                const newAccount = new Account({//if account doesnt exist then create
                   userId: userId,
                   accessToken: ACCESS_TOKEN,
                   itemid: ITEM_ID,
@@ -75,5 +75,6 @@ router.post(
     }
   }
 );
+router.delete("/accounts/:id")
 
 module.exports = router;
