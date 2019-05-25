@@ -78,15 +78,15 @@ if (nextProps.errors) {
                     id='email'
                     type='email'
                     className={classnames('', {
-                      invalid: errors.email || errors.emailnotfound
+                      invalid: errors.email || errors.emailNotFound
                     })}/>
                   <label htmlFor='email'>Email</label>
                   <span className="red-text">
                   {errors.email}
-                  {errors.emailnotfound}
+                  {errors.emailNotFound}
                 </span>
                 </div>
-                <div className='input-feild col s12'>
+                <div className='input-field col s12'>
                   <input
                     onChange={this.onChange}
                     value={this.state.password}
@@ -94,12 +94,12 @@ if (nextProps.errors) {
                     id='password'
                     type='password'
                     className={classnames('', {
-                      invalid: errors.password || errors.passwordincorrect
+                      invalid: errors.password || errors.passwordIncorrect
                     })}/>
                   <label htmlFor='password'>Password</label>
                   <span className="red-text">
                   {errors.password}
-                  {errors.passwordincorrect}
+                  {errors.passwordIncorrect}
                 </span>
                 </div>
                 <div className='col s12' style={{ paddingLeft: '11.250px' }}>

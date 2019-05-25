@@ -1,7 +1,7 @@
 {
   "name": "bankaroni",
   "version": "1.0.0",
-  "description": "A simple MVP auth login app",
+  "description": "A simple banking app consuming Plaid API",
   "main": "server.js",
   "dependencies": {
     "bcryptjs": "^2.4.3",
