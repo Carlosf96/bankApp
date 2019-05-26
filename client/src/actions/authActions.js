@@ -1,5 +1,5 @@
-//create our actions
-//Import dependencies and action definitions from types.js
+//create our actions for authenticating user
+//Import dependencies and action type definitions from types.js
 
 import axios from 'axios';//Use axios to make HTTPRequests within certain action
 

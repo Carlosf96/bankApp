@@ -1,5 +1,5 @@
 import axios from "axios";
-
+//actions for interacting with plaid api
 import {
   ADD_ACCOUNT,
   DELETE_ACCOUNT,
