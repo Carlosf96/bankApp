@@ -47,21 +47,30 @@ class Dashboard extends Component {
             <p className="flow-text grey-text text-darken-1">
               To get started, link your first bank account below.
             </p>
+            <div>
+              <PlaidLinkButton
+                buttonProps={{
+                  className:
+                    "btn btn-large waves-effect waves-light hoverable blue accent-3 main-btn"
+                }}
+                plaidLinkProps={{
+                  clientName: "Bankaroni",
+                  key: "Key",
+                  env: "sandbox",
+                  product: ["transactions"],
+                  onSuccess: this.handleOnSucess
+                }}
+                onScriptLoad={() => this.setState({ loaded: true })}
+              >
+                Link Account
+              </PlaidLinkButton>
+            </div>
+            <button
+              onClick={this.onLogoutClick}
+              className="btn btn-large waves-effect waves-light hoverable red accent-3 main-btn">
+              Logout
+              </button>
           </div>
-          <PlaidLinkButton
-            buttonProps={{
-              className:
-                "btn btn-large waves-effect waves-light hoverable blue accent-3 main-btn"
-            }}
-            plaidLinkProps={{
-              clientName: "Bankaroni",
-              key: "Key",
-              env: "sandbox",
-              product: ["transactions"],
-              onSuccess: this.handleOnSucess
-            }}
-            onScriptLoad={() => this.setState({ loaded: true })}
-          />
         </div>
       );
     }
