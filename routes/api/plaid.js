@@ -22,9 +22,9 @@ const client = new plaid.Client(
   { version: "2018-05-22" }
 );
 
-var PUBLIC_TOKEN = "5cafd9ecf9c7ee0012d5ab00";
-var ACCESS_TOKEN = "f4785648c2e65f2634af3bd8a4475b";
-var ITEM_ID = "0e6537859842b48227512f9d472960";
+var PUBLIC_TOKEN = null;
+var ACCESS_TOKEN = null;
+var ITEM_ID = null;
 
 //routes will go here
 
