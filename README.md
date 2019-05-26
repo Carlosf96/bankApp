@@ -11,7 +11,9 @@ cd into repo dir
 inside of repo do the following commands
 
 ```bash
-npm install && npm run client-install
+$ npm install && npm run client-install
+$ npm run dev
+   concurrently "npm run server" "npm run client"
 ```
 ## Built With
 
