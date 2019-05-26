@@ -59,7 +59,8 @@ router.post(
               if (account) {
                 console.log("Account already exists");
               } else {
-                const newAccount = new Account({//if account doesnt exist then create
+                const newAccount = new Account({
+                  //if account doesnt exist then create
                   userId: userId,
                   accessToken: ACCESS_TOKEN,
                   itemid: ITEM_ID,
@@ -75,12 +76,26 @@ router.post(
     }
   }
 );
-router.delete("/accounts/:id",//delete account with given id
+
+router.delete(
+  "/accounts/:id", //delete account with given id
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    Account.findById(req.params.id).then(account => {//search for account using id
-      account.remove().then(() => res.json({ success: true }));//Delete account
+    Account.findById(req.params.id).then(account => {
+      //search for account using id
+      account.remove().then(() => res.json({ success: true })); //Delete account
     });
-})
+  }
+);
+
+router.get(
+  "/accounts",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Account.find({ userId: req.user.id })
+      .then(accounts => res.json(accounts))
+      .catch(err => console.log(err));
+  }
+);
 
 module.exports = router;
