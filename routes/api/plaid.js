@@ -75,6 +75,12 @@ router.post(
     }
   }
 );
-router.delete("/accounts/:id")
+router.delete("/accounts/:id",//delete account with given id
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Account.findById(req.params.id).then(account => {//search for account using id
+      account.remove().then(() => res.json({ success: true }));//Delete account
+    });
+})
 
 module.exports = router;
