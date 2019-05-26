@@ -30,7 +30,7 @@ var ITEM_ID = "0e6537859842b48227512f9d472960";
 
 //this route will post to api/plaid/accounts/add
 //will trade public token for access tokens and stores credentials in the database
-//access to this route will private
+//access to this route will be private
 
 router.post(
   "/accounts/add",
@@ -78,7 +78,7 @@ router.post(
 );
 
 router.delete(
-  "/accounts/:id", //delete account with given id
+  "/accounts/:id", //unlink account with given id
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Account.findById(req.params.id).then(account => {
@@ -121,7 +121,7 @@ router.post(
               accountName: institutionName,
               transactions: resp.transactions
             });
-            //Dont respond till all transactions have been added
+            //Dont respond until all transactions have been added
             if (transactions.length === accounts.length) {
               res.json(transactions);
             }
