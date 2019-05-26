@@ -98,4 +98,38 @@ router.get(
   }
 );
 
+router.post(
+  "/accounts/transactions",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const now = moment();
+    const today = now.format("YYYY-MM-DD");
+    const thirtyDaysAgo = now.subtract(30, "days").format("YYYY-MM-DD"); //set to 30 days change if want more
+
+    let transactions = [];
+
+    const accounts = req.body;
+
+    if (accounts) {
+      accounts.forEach(account => {
+        ACCESS_TOKEN = account.accessToken;
+        const institutionName = account.institutionName;
+        client
+          .getTransactions(ACCESS_TOKEN, thirtyDaysAgo, today)
+          .then(resp => {
+            transactions.push({
+              accountName: institutionName,
+              transactions: resp.transactions
+            });
+            //Dont respond till all transactions have been added
+            if (transactions.length === accounts.length) {
+              res.json(transactions);
+            }
+          })
+          .catch(err => console.log(err));
+      });
+    }
+  }
+);
+
 module.exports = router;
