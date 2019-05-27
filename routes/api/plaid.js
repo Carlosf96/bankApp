@@ -63,7 +63,7 @@ router.post(
                   //if account doesnt exist then create
                   userId: userId,
                   accessToken: ACCESS_TOKEN,
-                  itemid: ITEM_ID,
+                  itemId: ITEM_ID,
                   institutionId: institution_id,
                   institutionName: name
                 });

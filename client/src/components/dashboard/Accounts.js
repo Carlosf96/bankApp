@@ -9,7 +9,6 @@ import {
 } from "../../actions/accountActions";
 import { logoutUser } from "../../actions/authActions";
 import MaterialTable from "material-table";
-import { stat } from "fs";
 
 class Accounts extends Component {
   componentDidMount() {//when component mounts go ahead and get trans for accounts
@@ -44,7 +43,7 @@ class Accounts extends Component {
   render() {
     const { user, accounts } = this.props;
     const { transactions, transactionsLoading } = this.props.plaid;
-    let accountItems = accounts.map(account => {
+    let accountItems = accounts.map(account => (
       <li key={account._id} style={{ marginTop: "1rem" }}>
         <button
           style={{ marginRight: "1rem" }}
@@ -54,7 +53,7 @@ class Accounts extends Component {
         </button>
         <b>{account.inistitutionName}</b>
       </li>
-    });
+    ));
     //Set up data table
     const transactionsColumns = [
       { title: "Account", field: "account" },
@@ -105,7 +104,7 @@ class Accounts extends Component {
             plaidLinkProps={{
               clientName: "Bankaroni",
               key: "0e6537859842b48227512f9d472960",
-              evn: "sandbox",
+              env: "sandbox",
               product: ["transactions"],
               onSuccess: this.handleOnSuccess
             }}
@@ -122,8 +121,8 @@ class Accounts extends Component {
           ) : (
               <>
                 <p className="grey-text text-darken-1">
-                  You have <b>{transactionsData.length}</b>
-                  transactions from your
+                  You have <b>{transactionsData.length}</b>{" "}
+                  transactions from your {" "}
                   <b>{accounts.length}</b> linked
                   {accounts.length > 1 ? (
                     <span> accounts </span>

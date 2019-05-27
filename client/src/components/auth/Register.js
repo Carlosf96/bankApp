@@ -94,7 +94,7 @@ class Register extends Component {
                 error={errors.email}
                 id='email'
                 type='email'
-                className={classnames('',{
+                className={classnames('validate',{
                   invalid: errors.email
                 })}
                 />
