@@ -1,3 +1,5 @@
+![logo](client/src/img/credit_card.png)
+
 # A fullstack banking APP
 
 A basic banking app that includes a frontend built on ReactJS and backend built with ExpressJS on NodeJS consumes the Plaid api.
