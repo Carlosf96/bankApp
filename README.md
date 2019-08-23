@@ -1,6 +1,6 @@
 # A fullstack banking APP
 
-A basic banking app that consumes the Plaid api.
+A basic banking app that includes a frontend built on ReactJS and backend built with ExpressJS on NodeJS consumes the Plaid api.
 
 ## Installation
 
