@@ -3,7 +3,7 @@
 # A fullstack banking APP
 
 A basic banking app that includes a frontend built on ReactJS and backend built with ExpressJS on NodeJS consumes the Plaid api.
-# See it deployed on Heroku
+## See it deployed on Heroku
 [Heroku](https://bankaroni.herokuapp.com/)
 
 ## Installation
