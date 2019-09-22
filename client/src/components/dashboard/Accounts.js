@@ -15,7 +15,7 @@ class Accounts extends Component {
     const { accounts } = this.props;
     this.props.getTransactions(accounts)
   }
-  //add account
+  // Add account
   handleOnSuccess = (token, metadata) => {
     const { accounts } = this.props;
     const plaidData = {
@@ -25,7 +25,7 @@ class Accounts extends Component {
     };
     this.props.addAccount(plaidData);
   };
-//delete account
+// Delete account
   onDeleteClick = id => {
     const { accounts } = this.props;
     const accountData = {
@@ -35,7 +35,7 @@ class Accounts extends Component {
     this.props.deleteAccount(accountData);
   };
 
-  //Logout
+  // Logout
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
@@ -49,7 +49,7 @@ class Accounts extends Component {
           style={{ marginRight: "1rem" }}
           onClick={this.onDeleteClick.bind(this, account._id)}
           className="btn btn-small btn-floating waves-effect waves-light hoverable red accent-3">
-          <i className="material-icons">Delete</i>
+          <i className="material-icons">delete</i>
         </button>
         <b>{account.inistitutionName}</b>
       </li>
@@ -59,7 +59,7 @@ class Accounts extends Component {
       { title: "Account", field: "account" },
       { title: "Date", field: "date", type: "date", defaultSort: "desc" },
       { title: "Name", field: "name" },
-      { title: "Amount", field: "amount" },
+      { title: "Amount", field: "amount", type: "numeric" },
       { title: "Category", field: "category" }
     ];
     let transactionsData = [];
@@ -130,11 +130,13 @@ class Accounts extends Component {
                     )}
                   from the past 30 days
                 </p>
+                
                 <MaterialTable
-                  colums={transactionsColumns}
+                  columns={transactionsColumns}
                   data={transactionsData}
                   title="Search Transactions"
                 />
+                {console.log(MaterialTable)}
               </>
             )}
         </div>

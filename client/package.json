@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.4.2",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
+    "date-fns": "^2.0.0-beta.5",
+    "jss": "^9.8.7",
     "jwt-decode": "^2.2.0",
-    "material-table": "^1.31.0",
+    "material-table": "^1.50.0",
+    "material-ui": "^1.0.0-beta.47",
     "materialize-css": "^1.0.0-rc.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -16,7 +20,8 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "typescript": "^3.6.3"
   },
   "scripts": {
     "start": "react-scripts start",
