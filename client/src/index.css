@@ -7,8 +7,45 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.nav-wrapper{
+  background: linear-gradient(-45deg, rgb(60, 105, 143), rgb(199, 67, 211), #23A6D5, rgb(13, 123, 138));
+  position: relative;
+  animation: change 10s ease-in-out infinite;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.credit-card {
+  animation: float 3s ease-in-out infinite;
+}
+
+
+
+
+@keyframes change{
+  0%{
+    background-position: 0 50%; 
+  }
+  50%{
+    background-position: 100% 50%; 
+  }
+  100%{
+    background-position: 0 50%; 
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
