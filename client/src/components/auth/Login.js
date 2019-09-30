@@ -49,7 +49,7 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="container">
+      <div style={{height: "100vh"}} className="container valign-wrapper">
         <div style={{ marginTop: "4rem" }} className="row">
           <div className="col s8 offset-s2">
             <Link to="/" className="btn-flat waves-effect">
@@ -60,7 +60,7 @@ class Login extends Component {
               <h4>
                 <b>Login</b> below
               </h4>
-              <p className="grey-text text-darken-1">
+              <p className="grey-text text-darken-3">
                 Don't have an account? <Link to="/register">Register</Link>
               </p>
             </div>

@@ -1,4 +1,5 @@
 body {
+  background-size: 100%;
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -6,13 +7,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(-45deg, rgb(60, 105, 143), rgb(199, 67, 211), #23A6D5, rgb(13, 123, 138)) no-repeat;
 }
+
 .nav-wrapper{
   background: linear-gradient(-45deg, rgb(60, 105, 143), rgb(199, 67, 211), #23A6D5, rgb(13, 123, 138));
   position: relative;
   animation: change 10s ease-in-out infinite;
 }
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -22,9 +24,12 @@ code {
 .credit-card {
   animation: float 3s ease-in-out infinite;
 }
-
-
-
+.input-field>label{
+  color: rgb(0, 0, 0);
+}
+textarea.materialze-textarea {
+  border-bottom: 1px solid red;
+}
 
 @keyframes change{
   0%{
